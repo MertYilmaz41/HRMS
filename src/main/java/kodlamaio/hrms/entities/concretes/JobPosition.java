@@ -5,11 +5,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Table(name="job_positions")
 public class JobPosition{
@@ -25,15 +30,5 @@ public class JobPosition{
 	@Column(name="job_position_name")
 	private String jobPositionName;
 	
-	public JobPosition() 
-	{
-		
-	}
 
-	public JobPosition(int id, int jobSeekerId, String jobPositionName) {
-		super();
-		this.id = id;
-		this.jobSeekerId = jobSeekerId;
-		this.jobPositionName = jobPositionName;
-	}
 }

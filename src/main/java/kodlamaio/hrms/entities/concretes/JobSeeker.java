@@ -5,11 +5,15 @@ import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import kodlamaio.hrms.entities.abstracts.User;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @PrimaryKeyJoinColumn(name = "id")
 @Table(name="job_seekers")
@@ -30,18 +34,7 @@ public class JobSeeker extends User{
 	@Column(name="birth_year")
 	private String birthYear;
 	
-	public JobSeeker() 
-	{
-		
-	}
 
-	public JobSeeker(String firstName, String lastName, String nationalityId, String birthYear) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.nationalityId = nationalityId;
-		this.birthYear = birthYear;
-	}
 	
 	
 }

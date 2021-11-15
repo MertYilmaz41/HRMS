@@ -5,11 +5,15 @@ import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import kodlamaio.hrms.entities.abstracts.User;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @PrimaryKeyJoinColumn(name = "id")
 @Table(name="employers")
@@ -27,18 +31,5 @@ public class Employer extends User{
 	@Column(name="verification_status")
 	private boolean verificationStatus;
 	
-	public Employer() 
-	{
-		
-	}
-
-	public Employer(int id, int userId, String companyName, String webAddress, String phoneNumber,
-			boolean verificationStatus) {
-		super();
-		this.companyName = companyName;
-		this.webAddress = webAddress;
-		this.phoneNumber = phoneNumber;
-		this.verificationStatus = verificationStatus;
-	}
 
 }
