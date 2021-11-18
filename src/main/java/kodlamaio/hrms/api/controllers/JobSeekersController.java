@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import kodlamaio.hrms.business.abstracts.JobSeekerService;
+import kodlamaio.hrms.core.utilities.results.DataResult;
 import kodlamaio.hrms.entities.concretes.JobSeeker;
 
 @RestController
@@ -22,7 +23,7 @@ public class JobSeekersController {
 	}
 	
 	@RequestMapping("/getall")
-	List<JobSeeker> getAll()
+	DataResult<List<JobSeeker>> getAll()
 	{
 		return this.jobSeekerService.getAll();
 	}
