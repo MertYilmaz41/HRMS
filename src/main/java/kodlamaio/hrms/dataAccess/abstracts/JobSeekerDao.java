@@ -1,9 +1,10 @@
 package kodlamaio.hrms.dataAccess.abstracts;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Optional;
 
 import kodlamaio.hrms.entities.concretes.JobSeeker;
 
-public interface JobSeekerDao extends JpaRepository<JobSeeker,Integer>{
-
+public interface JobSeekerDao extends UserDao<JobSeeker>{
+	
+	Optional<JobSeeker> findByNationalIdentity(String nationalityId);
 }
