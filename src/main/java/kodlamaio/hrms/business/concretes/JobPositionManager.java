@@ -23,7 +23,6 @@ public class JobPositionManager implements JobPositionService{
 	
 	@Autowired
 	public JobPositionManager(JobPositionDao jobPositionDao) {
-		super();
 		this.jobPositionDao = jobPositionDao;
 	}
 
@@ -31,7 +30,7 @@ public class JobPositionManager implements JobPositionService{
 	public DataResult<List<JobPosition>> getAll() 
 	{	
 		return new SuccessDataResult<List<JobPosition>>
-		(this.jobPositionDao.findAll(),"Data getirildi.");
+		(this.jobPositionDao.findAll(), Messages.jobPositionListed);
 	}
 
 	@Override

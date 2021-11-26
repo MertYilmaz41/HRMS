@@ -9,10 +9,11 @@ import kodlamaio.hrms.core.utilities.validators.abstracts.EmployerValidatorServi
 import kodlamaio.hrms.dataAccess.abstracts.UserDao;
 import kodlamaio.hrms.entities.concretes.Employer;
 
+
 @Service
 public class EmployerManager extends UserManager<Employer> implements EmployerService{
 	
-	EmployerValidatorService employerValidatorService;
+	private final EmployerValidatorService employerValidatorService;
 	
 	@Autowired
 	public EmployerManager(UserDao<Employer> userDao, EmployerValidatorService employerValidatorService) 
